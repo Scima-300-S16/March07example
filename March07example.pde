@@ -39,22 +39,24 @@ void setup() {
     // the wind direction will indicate the rotation of the line
     // no sense in going more than 45 degrees as we can't tell the 
     // difference 
-    int dirtoY = int(map( direction, 0, 360, 0, -90));
+    int dirtoY = int(map(direction, 0, 360, 0, -90));
 
     // the wind speed will change the color (monochrome)
     int speedtoAlpha = int(map(speed, 0, 15, 0, 255));
 
     int speedtoWeight = int(map(speed, 0, 15, 0, 8));
 
-    // move to the next column
+    // increment x
     x += w;
 
-
-
+    //traveling along the x axis until hitting width and then 
+    //increasing on y axis and resetting x to 0
     if (x > width) {
       x = 0;
       y+=h;
     }
+
+    //label at top
     float newx = map(x, 0, 1000, 30, 970);
     float newy = map(y, 0, 1000, 30, 970);
     drawTable(newx, newy, w, h, day, speedtoAlpha, dirtoY, speedtoWeight);
@@ -66,8 +68,12 @@ void setup() {
   text("wind speed and wind direction over time", 5, 15);
 }
 
+//this is the function that takes all the values established above
 void drawTable(float x, float y, float w, float h, int day, int speedtoAlpha, int dirtoY, int speedtoWeight) {
-  //switch case here for day colors?
+
+  //switch case is a conditional statement sort of like an if statement
+  // here it is being used to change colors for each day
+  // you can mess around with it or take it out
 
   switch (day) {
   case 31:
@@ -96,14 +102,12 @@ void drawTable(float x, float y, float w, float h, int day, int speedtoAlpha, in
     break;
   }
 
-//stroke(255-daytoColor*5, daytoColor*5, daytoColor*5, speedtoAlpha);
+  // this is where the lines are getting drawn
+  strokeWeight(speedtoWeight);
+  line(x, y, x+w, y+ dirtoY); 
+  line(x, y+h/3, x+w, y+h/3+ dirtoY); 
+  line(x, y+(h/3*2), x+w, y+(h/3*2)+dirtoY); 
 
-strokeWeight(speedtoWeight);
-line(x, y, x+w, y+ dirtoY); 
-line(x, y+h/3, x+w, y+h/3+ dirtoY); 
-line(x, y+(h/3*2), x+w, y+(h/3*2)+dirtoY); 
-//println("dirtoCoord: ",dirtoY);
-
-//println("daytoColor: ", daytoColor);
-
+  //println("dirtoCoord: ",dirtoY);
+  //println("daytoColor: ", daytoColor);
 }
