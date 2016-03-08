@@ -40,12 +40,12 @@ void setup() {
     // the wind direction will indicate the rotation of the line
     // no sense in going more than 45 degrees as we can't tell the 
     // difference 
-    int dirtoY = int(map(direction, 0, 360, 0, -90));
+    int dirtoY = int(map(direction, 0, 60, 0, -20));
 
     // the wind speed will change the color (monochrome)
-    int speedtoAlpha = int(map(speed, 0, 15, 0, 255));
+    int speedtoAlpha = int(map(speed, 0, 15, 150, 255));
 
-    int speedtoWeight = int(map(speed, 0, 15, 0, 8));
+    int speedtoWeight = int(map(speed, 0, 15, 0, 4));
 
     // increment x
     x += w;
