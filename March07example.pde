@@ -40,7 +40,7 @@ void setup() {
     // the wind direction will indicate the rotation of the line
     // no sense in going more than 45 degrees as we can't tell the 
     // difference 
-    int dirtoY = int(map(direction, 0, 360, 0, PI));
+    int dirtoY = int(map(direction, 0, 360, 0, -PI));
 
     // the wind speed will change the color (monochrome)
     int speedtoAlpha = int(map(speed, 0, 15, 0, 255));
@@ -105,10 +105,14 @@ void drawTable(float x, float y, float w, float h, int day, int speedtoAlpha, in
 
   // this is where the lines are getting drawn
   strokeWeight(speedtoWeight);
-  //pushMatrix();
-  //rotate(dirtoY);
-  line(x, y, x+w, y); 
-  //popMatrix();
+  pushMatrix();
+   translate(x,y);
+   rotate(dirtoY);
+   line(0, h/3, w, h/3); 
+   println(x);
+  popMatrix();
+  
+  
   //line(x, y+h/3, x+w, y+h/3+ dirtoY); 
   //line(x, y+(h/3*2), x+w, y+(h/3*2)+dirtoY); 
 
