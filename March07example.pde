@@ -27,8 +27,8 @@ void setup() {
   println("h: ", h);
 
   //establishing x and y values
-  float x = 0;
-  float y = 0;
+  float x = 1;
+  float y = 1;
 
 
   for (TableRow row : table.rows()) {
@@ -53,19 +53,19 @@ void setup() {
     //traveling along the x axis until hitting width and then 
     //increasing on y axis and resetting x to 0
     if (x > width) {
-      x = 0;
+      x = 1;
       y+=h;
     }
 
     //label at top
-    float newx = map(x, 0, 1000, 30, 970);
-    float newy = map(y, 0, 1000, 30, 970);
+    float newx = map(x, 0, 500, 30, 970);
+    float newy = map(y, 0, 500, 30, 970);
     drawTable(newx, newy, w, h, day, speedtoAlpha, dirtoY, speedtoWeight);
   }
 
-  fill(255, 120);
+  fill(22, 132);
   rect(0, 0, 250, 20);
-  fill(0);
+  fill(222);
   text("wind speed and wind direction over time", 5, 15);
 }
 
@@ -78,13 +78,13 @@ void drawTable(float x, float y, float w, float h, int day, int speedtoAlpha, in
 
   switch (day) {
   case 31:
-    stroke(255, 0, 0, speedtoAlpha);
+    stroke(100, 22, 11, speedtoAlpha);
     break;
   case 1:
     stroke(0, 255, 0, speedtoAlpha);
     break;
   case 2:
-    stroke(0, 0, 255, speedtoAlpha);
+    stroke(35, 22, 36, speedtoAlpha);
     break;
   case 3:
     stroke(255, 0, 0, speedtoAlpha);
@@ -93,13 +93,13 @@ void drawTable(float x, float y, float w, float h, int day, int speedtoAlpha, in
     stroke(0, 255, 0, speedtoAlpha);
     break;
   case 5:
-    stroke(0, 0, 255, speedtoAlpha);
+    stroke(255, 0, 255, speedtoAlpha);
     break;
   case 6:
-    stroke(255, 0, 0, speedtoAlpha);
+    stroke(33, 23, 160, speedtoAlpha);
     break;
   case 7:
-    stroke(0, 255, 0, speedtoAlpha);
+    stroke(255, 255, 0, speedtoAlpha);
     break;
   }
 
