@@ -104,9 +104,9 @@ void drawTable(float x, float y, float w, float h, int day, int speedtoAlpha, in
 
   // this is where the lines are getting drawn
   strokeWeight(speedtoWeight);
-  line(x, y, x+w, y+ dirtoY); 
-  line(x, y+h/3, x+w, y+h/3+ dirtoY); 
-  line(x, y+(h/3*2), x+w, y+(h/3*2)+dirtoY); 
+  rect(x, y, x+w, y+ dirtoY); 
+  rect(x, y+h/3, x+w, y+h/3+ dirtoY); 
+  rect(x, y+(h/3*2), x+w, y+(h/3*2)+dirtoY); 
 
   //println("dirtoCoord: ",dirtoY);
   //println("daytoColor: ", daytoColor);
