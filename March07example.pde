@@ -3,7 +3,7 @@ Table table;
 
 void setup() { 
   size(1300, 700);
-  background(0);
+  background(255);
   // the file must be in the sketch's data folder
   // the argument "header" tells loadTable() to organize the file
   // columns according to the header line (the first line)
@@ -78,37 +78,48 @@ void drawTable(float x, float y, float w, float h, int day, int speedtoAlpha, in
 
   switch (day) {
   case 31:
-    stroke(255, 0, 0, speedtoAlpha);
+    stroke(255, 194, 230, speedtoAlpha);
+    fill(255-speedtoAlpha, speedtoAlpha);
     break;
   case 1:
-    stroke(0, 255, 0, speedtoAlpha);
+    stroke(255, 207, 173, speedtoAlpha);
+    fill(255-speedtoAlpha, speedtoAlpha);
     break;
   case 2:
-    stroke(0, 0, 255, speedtoAlpha);
+    stroke(241,211,141, speedtoAlpha);
+    fill(255-speedtoAlpha, speedtoAlpha);
     break;
   case 3:
-    stroke(255, 0, 0, speedtoAlpha);
+    stroke(198,208,174, speedtoAlpha);
+    fill(255-speedtoAlpha, speedtoAlpha);
     break;
   case 4:
-    stroke(0, 255, 0, speedtoAlpha);
+    stroke(149,204,199, speedtoAlpha);
+    fill(255-speedtoAlpha, speedtoAlpha);
     break;
   case 5:
-    stroke(0, 0, 255, speedtoAlpha);
+    stroke(163, 195, 255, speedtoAlpha);
+    fill(255-speedtoAlpha, speedtoAlpha);
     break;
   case 6:
-    stroke(255, 0, 0, speedtoAlpha);
+    stroke(189, 197, 255, speedtoAlpha);
+    fill(255-speedtoAlpha, speedtoAlpha);
     break;
   case 7:
-    stroke(0, 255, 0, speedtoAlpha);
+    stroke(211, 203, 255, speedtoAlpha);
+    fill(255-speedtoAlpha, speedtoAlpha);
     break;
   }
 
   // this is where the lines are getting drawn
   strokeWeight(speedtoWeight);
-  ellipse(x, y, x+w, y+ dirtoY); 
-  ellipse(x, y+h/3, x+w, y+h/3+ dirtoY); 
-  ellipse(x, y+(h/3*2), x+w, y+(h/3*2)+dirtoY); 
+  //noFill();
+  
+  rect(x, y, x+w, y+ dirtoY); 
+  rect(x, y+h/3, x+w, y+h/3+ dirtoY); 
+  rect(x, y+(h/3*2), x+w, y+(h/3*2)+dirtoY); 
 
   //println("dirtoCoord: ",dirtoY);
   //println("daytoColor: ", daytoColor);
+  println("speedtoAlpha: ", speedtoAlpha);
 }
