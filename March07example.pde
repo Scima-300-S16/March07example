@@ -1,7 +1,7 @@
 Table table;
 
 void setup() { 
-  size(1300, 700);
+  size(1300, 400);
   background(0);
   // the file must be in the sketch's data folder
   // the argument "header" tells loadTable() to organize the file
@@ -39,12 +39,12 @@ void setup() {
     // the wind direction will indicate the rotation of the line
     // no sense in going more than 45 degrees as we can't tell the 
     // difference 
-    int dirtoY = int(map(direction, 0, 360, 0, -90));
+    int dirtoY = int(map(direction, 0, 180, 0, -180));
 
     // the wind speed will change the color (monochrome)
-    int speedtoAlpha = int(map(speed, 0, 15, 0, 255));
+    int speedtoAlpha = int(map(speed, 0, 15, 0, 500));
 
-    int speedtoWeight = int(map(speed, 0, 15, 0, 8));
+    int speedtoWeight = int(map(speed, 0, 50, 0, 8));
 
     // increment x
     x += w;
