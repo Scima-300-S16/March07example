@@ -1,2 +1,2 @@
-# March07example
-This is example code for our in class exercise working with data and tables in Processing.
+# bubbles_on_a_map_pt3
+This code visualizes amounts in relation to a location. 1) Edit amounts.tsv to correlate to your data set, and 2) add the locations.tsv and names.tsv files to this data folder.
